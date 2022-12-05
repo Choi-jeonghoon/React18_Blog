@@ -1,0 +1,3 @@
+# Mini blog project
+
+## Frontend
