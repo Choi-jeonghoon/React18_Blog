@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["import", "react", "react-hooks", "prettier"],
+  "extends": ["react-app", "eslint:recommended", "plugin:prettier/recommended"],
+  "rules": {
+    "strict": 0,
+    "quotes": ["warn", "double"],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}
