@@ -6,7 +6,7 @@ import SigninHeader from "../signin/SigninHeader";
 
 const theme = createTheme();
 
-const SigninContainer = () => {
+const SigninContainer = ({ register, onUserLoginRequestEvent }) => {
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -22,7 +22,10 @@ const SigninContainer = () => {
             }}
           >
             <SigninHeader />
-            <SigninForm />
+            <SigninForm
+              register={register}
+              onUserLoginRequestEvent={onUserLoginRequestEvent}
+            />
           </Box>
         </Grid>
       </Grid>
