@@ -7,7 +7,7 @@ const IS_DEV_MODE = true;
 const MyErrorBoundary = ({ error }) => {
   useEffect(() => {
     IS_DEV_MODE && console.log(error);
-  }, []);
+  }, [error]);
 
   return (
     <Box
