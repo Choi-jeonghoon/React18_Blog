@@ -1,15 +1,17 @@
 import { Button, TextField, Link, Box, Grid } from "@mui/material";
 
-const SigninForm = () => {
+const SigninForm = ({ register, onUserLoginRequestEvent }) => {
   return (
-    <Box component="form" sx={{ mt: 1 }}>
+    <Box component="form" sx={{ mt: 1 }} onSubmit={onUserLoginRequestEvent}>
       <TextField
         margin="normal"
         required
         fullWidth
         label="Email Address"
+        type="email"
         name="email"
         autoFocus
+        {...register("email")}
       />
       <TextField
         margin="normal"
@@ -18,6 +20,7 @@ const SigninForm = () => {
         name="password"
         label="Password"
         type="password"
+        {...register("password")}
       />
       <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
         Sign In
