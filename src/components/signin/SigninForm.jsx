@@ -1,6 +1,6 @@
 import { Button, TextField, Link, Box, Grid } from "@mui/material";
 
-const SigninForm = ({ register, onUserLoginRequestEvent }) => {
+const SigninForm = ({ register, errors, onUserLoginRequestEvent }) => {
   return (
     <Box component="form" sx={{ mt: 1 }} onSubmit={onUserLoginRequestEvent}>
       <TextField
@@ -11,6 +11,8 @@ const SigninForm = ({ register, onUserLoginRequestEvent }) => {
         type="email"
         name="email"
         autoFocus
+        error={errors.email ? true : false}
+        helperText={errors?.email?.message}
         {...register("email")}
       />
       <TextField
@@ -20,6 +22,8 @@ const SigninForm = ({ register, onUserLoginRequestEvent }) => {
         name="password"
         label="Password"
         type="password"
+        error={errors.password ? true : false}
+        helperText={errors?.password?.message}
         {...register("password")}
       />
       <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
