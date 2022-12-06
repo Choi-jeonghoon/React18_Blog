@@ -15,8 +15,13 @@ const userSchema = yup
   .required();
 
 const useUserLogin = () => {
-  const { register, handleSubmit } = useForm({
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
     resolver: yupResolver(userSchema),
+    mode: "onChange",
     defaultValues: {
       email: "",
       password: "",
@@ -29,6 +34,7 @@ const useUserLogin = () => {
 
   return {
     register,
+    errors,
     handleSubmit,
     handleUserLoginRequest,
   };
